@@ -1,0 +1,21 @@
+<!-- Drop List Section -->
+<section id="droplist" class="fade-in hidden px-4 py-6">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-2xl font-bold text-yellow-300 mb-4 text-center">🔎 Drop List</h2>
+  
+      <!-- Search Box -->
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search mob or item..."
+        class="w-full p-3 rounded bg-black/30 text-white border border-white/30 mb-4 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
+        oninput="searchDropList()"
+      />
+  
+      <!-- Drop List Results -->
+      <div id="droplistResults" class="space-y-2">
+        <!-- Result will load here via fetch -->
+      </div>
+    </div>
+  </section>
+  

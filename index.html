@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lineage 1 Server</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+
+  </head>
+
+  <body class="text-white text-base md:text-lg" style="background-color: black">
+    <!-- 🔴 Live Video Background -->
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -10;
+      "
+    >
+      <source src="media/lineage-intro.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Rest of your content here... -->
+
+    <div class="slideshow-container absolute left-0 top-0 h-full overflow-hidden">
+      <div class="slideshow-inner w-full h-full relative">
+        <img
+          src="lineage.png"
+          class="slide absolute top-0 left-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
+          alt="Lineage 1 Image"
+        />
+        <img
+          src="images/3.jpg"
+          class="slide absolute top-0 left-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
+          alt="Lineage 1 Image 3"
+        />
+        <img
+          src="images/4.jpg"
+          class="slide absolute top-0 left-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
+          alt="Lineage 1 Image 4"
+        />
+        <img
+          src="images/5.jpg"
+          class="slide absolute top-0 left-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
+          alt="Lineage 1 Image 5"
+        />
+        <img
+          src="images/6.jpg"
+          class="slide absolute top-0 left-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
+          alt="Lineage 1 Image 6"
+        />
+      </div>
+    </div>
+
+    <div
+      class="bg-black bg-opacity-10 w-screen min-h-screen px-4 md:px-8 relative z-20"
+    >
+      <div class="max-w-7xl mx-auto">
+        <header class="text-center py-10 fade-in">
+          <h1 class="cinematic-title">
+            <span>L</span><span>i</span><span>n</span><span>e</span
+            ><span>a</span><span>g</span><span>e</span> <span>&nbsp;</span
+            ><span>1</span><span>&nbsp;</span> <span>G</span><span>e</span
+            ><span>n</span><span>e</span><span>s</span><span>i</span
+            ><span>s</span>
+          </h1>
+
+          <div class="mt-6 flex flex-wrap justify-center gap-4">
+            <a
+              href="#"
+              onclick="toggleForm('loginForm')"
+              class="btn-animate hover:text-blue-400 transition"
+              >Login</a
+            >
+
+            <a
+              href="#"
+              onclick="toggleForm('registerForm')"
+              class="btn-animate hover:text-green-400 transition"
+              >Register</a
+            >
+
+            <a
+              href="#"
+              onclick="toggleForm('droplist')"
+              class="btn-animate hover:text-yellow-400 transition"
+              >Drop List</a
+            >
+
+            <a
+              href="#"
+              onclick="toggleForm('download')"
+              class="btn-animate hover:text-purple-400 transition"
+              >Download</a
+            >
+
+            <a
+              href="#"
+              onclick="toggleForm('discord')"
+              class="btn-animate hover:text-indigo-400 transition"
+              >Join Discord</a
+            >
+
+            <a
+              href="#"
+              onclick="toggleForm('toprank')"
+              class="btn-animate hover:text-red-400 transition"
+              >Top Ranking</a
+            >
+          </div>
+        </header>
+
+        <section
+          id="toprank"
+          class="absolute top-28 right-4 w-64 p-3 rounded-xl z-50 fade-in hidden"
+        >
+          <div
+            class="w-full max-w-sm p-6 bg-white/10 backdrop-transparent border border-white/30 rounded-lg fade-in wave-effect"
+          >
+            <h2 class="text-2xl font-bold mb-4 text-center text-red-400">
+              🏆 Top Ranking
+            </h2>
+            <p class="text-center text-white">
+              Check out the top players on our server!
+            </p>
+            <!-- You can add dynamic content here later, e.g., a table or list of top players -->
+          </div>
+        </section>
+
+        <section
+          id="loginForm"
+          class="min-h-screen flex items-start justify-center pt-10 hidden"
+        >
+          <div
+            class="w-full max-w-sm p-6 bg-white/10 backdrop-transparent border border-white/30 rounded-lg shadow-lg fade-in wave-effect"
+          >
+            <h2 class="text-2xl font-bold mb-4 text-center text-white">
+              🔓 Login
+            </h2>
+            <form action="login.php" method="POST" class="space-y-4">
+              <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                required
+                class="w-full p-3 rounded bg-transparent text-white border-2 border-gray-300 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition"
+              />
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+                class="w-full p-3 rounded bg-transparent text-white border-2 border-gray-300 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-green-400 transition"
+              />
+              <button
+                class="w-full bg-blue-500 p-3 rounded hover:bg-blue-600 text-white font-semibold"
+              >
+                Login
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <section
+          id="registerForm"
+          class="min-h-screen flex items-center justify-center hidden"
+        >
+          <div
+            class="w-full max-w-sm p-6 bg-white/10 backdrop-transparent border border-white/30 rounded-lg shadow-lg fade-in wave-effect"
+          >
+            <h2 class="text-2xl font-bold mb-4 text-center text-white">
+              📝 Register
+            </h2>
+            <form action="register.php" method="POST" class="space-y-4">
+              <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                required
+                class="w-full p-3 rounded bg-transparent text-white border-2 border-gray-300 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition"
+              />
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+                class="w-full p-3 rounded bg-transparent text-white border-2 border-gray-300 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-400 transition"
+              />
+              <button
+                class="w-full bg-green-500 p-3 rounded hover:bg-green-600 text-white font-semibold"
+              >
+                Register
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <section id="droplist" class="fade-in hidden px-4 py-6">
+          <div class="max-w-2xl mx-auto">
+            <h2 class="text-2xl font-bold text-yellow-300 mb-4 text-center">
+              🔎 Drop List
+            </h2>
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search mob or item..."
+              class="w-full p-3 rounded bg-black/30 text-white border border-white/30 mb-4 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
+              oninput="searchDropList()"
+            />
+            <div id="droplistResults" class="space-y-2"></div>
+          </div>
+        </section>
+
+        <section id="download" class="text-center py-10 fade-in hidden">
+          <h2 class="text-2xl font-bold mb-4">⬇️ Download Game Client</h2>
+          <a
+            href="https://drive.google.com/file/d/1pUstHvjZpaM_oGMm803H3xbvHG_cpNxl/view?pli=1"
+            class="bg-purple-600 px-6 py-3 rounded-xl hover:bg-purple-700 transition"
+            >Download Now</a
+          >
+        </section>
+
+        <section id="discord" class="text-center py-10 fade-in hidden">
+          <h2 class="text-2xl font-bold mb-4">💬 Join our Discord Community</h2>
+          <p class="text-gray-300 mb-4">
+            Get support, updates, and chat with fellow players.
+          </p>
+          <a
+            href="https://discord.gg/9eP4pJDW"
+            target="_blank"
+            class="bg-indigo-600 px-6 py-3 rounded-xl hover:bg-indigo-700 transition"
+            >Join Discord</a
+          >
+        </section>
+
+        <section
+          id="rulesForm"
+          class="min-h-screen flex items-center justify-center hidden"
+        >
+          <div
+            class="w-full max-w-sm p-6 bg-white/10 backdrop-transparent border border-white/30 rounded-lg shadow-lg fade-in wave-effect"
+          >
+            <h2 class="text-2xl font-bold mb-4 text-center text-white">
+              📜 Rules
+            </h2>
+            <p class="text-center text-white">
+              Please read and follow our server rules to ensure a fair and fun
+              environment for everyone.
+            </p>
+            <!-- Rules content goes here -->
+          </div>
+        </section>
+
+        <!-- New Image Slideshow Section -->
+        <section id="imageSlideshow" class="py-10 hidden">
+          <div class="slideshow-container-custom mx-auto">
+            <div class="slideshow-inner-custom">
+              <img src="images/1.jpg" class="slide-custom" alt="Image 1" />
+              <img src="images/2.jpg" class="slide-custom" alt="Image 2" />
+              <img src="images/3.jpg" class="slide-custom" alt="Image 3" />
+              <img src="images/4.jpg" class="slide-custom" alt="Image 4" />
+              <img src="images/5.jpg" class="slide-custom" alt="Image 5" />
+              <img src="images/6.jpg" class="slide-custom" alt="Image 6" />
+              <img src="images/7.jpg" class="slide-custom" alt="Image 7" />
+              <img src="images/8.jpg" class="slide-custom" alt="Image 8" />
+              <img src="images/10.jpg" class="slide-custom" alt="Image 10" />
+              <img src="images/12.jpg" class="slide-custom" alt="Image 12" />
+              <img src="images/13.jpg" class="slide-custom" alt="Image 13" />
+              <img src="images/15.jpg" class="slide-custom" alt="Image 15" />
+              <img src="images/16.jpg" class="slide-custom" alt="Image 16" />
+              <img src="images/17.jpg" class="slide-custom" alt="Image 17" />
+              <img src="images/18.jpg" class="slide-custom" alt="Image 18" />
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="text-center px-4 py-8 text-gray-300 text-sm md:text-base"
+        >
+          <h3
+            class="cinematic-title text-xl md:text-2xl font-semibold text-white mb-4"
+          >
+            <span>F</span><span>i</span><span>r</span><span>s</span
+            ><span>t</span><span>&nbsp;</span><span>e</span><span>v</span
+            ><span>e</span><span>r</span><span>&nbsp;</span><span>l</span
+            ><span>a</span><span>r</span><span>g</span><span>e</span
+            ><span>-</span><span>s</span><span>c</span><span>a</span
+            ><span>l</span><span>e</span><span>&nbsp;</span><span>R</span
+            ><span>v</span><span>R</span>
+            <br />
+            <span>C</span><span>a</span><span>s</span><span>t</span
+            ><span>l</span><span>e</span><span>&nbsp;</span><span>S</span
+            ><span>i</span><span>e</span><span>g</span><span>e</span>
+          </h3>
+          <style>
+            /* @keyframes waveUpDown removed */
+
+            h1.cinematic-title span {
+              display: inline-block;
+              /* Animation removed */
+            }
+
+
+            h1.cinematic-title span:nth-child(1) {
+              animation-delay: 0s;
+            }
+            h1.cinematic-title span:nth-child(2) {
+              animation-delay: 0.1s;
+            }
+            h1.cinematic-title span:nth-child(3) {
+              animation-delay: 0.2s;
+            }
+            h1.cinematic-title span:nth-child(4) {
+              animation-delay: 0.3s;
+            }
+            h1.cinematic-title span:nth-child(5) {
+              animation-delay: 0.4s;
+            }
+            h1.cinematic-title span:nth-child(6) {
+              animation-delay: 0.5s;
+            }
+            h1.cinematic-title span:nth-child(7) {
+              animation-delay: 0.6s;
+            }
+            h1.cinematic-title span:nth-child(8) {
+              animation-delay: 0.7s;
+            }
+            h1.cinematic-title span:nth-child(9) {
+              animation-delay: 0.8s;
+            }
+            h1.cinematic-title span:nth-child(10) {
+              animation-delay: 0.9s;
+            }
+            h1.cinematic-title span:nth-child(11) {
+              animation-delay: 1s;
+            }
+            h1.cinematic-title span:nth-child(12) {
+              animation-delay: 1.1s;
+            }
+            h1.cinematic-title span:nth-child(13) {
+              animation-delay: 1.2s;
+            }
+            h1.cinematic-title span:nth-child(14) {
+              animation-delay: 1.3s;
+            }
+            h1.cinematic-title span:nth-child(15) {
+              animation-delay: 1.4s;
+            }
+            h1.cinematic-title span:nth-child(16) {
+              animation-delay: 1.5s;
+            }
+            h1.cinematic-title span:nth-child(17) {
+              animation-delay: 1.6s;
+            }
+            h1.cinematic-title span:nth-child(18) {
+              animation-delay: 1.7s;
+            }
+            h1.cinematic-title span:nth-child(19) {
+              animation-delay: 1.8s;
+            }
+            .cinematic-title span:nth-child(20) {
+              animation-delay: 1.9s;
+            }
+            .cinematic-title span:nth-child(21) {
+              animation-delay: 2s;
+            }
+            .cinematic-title span:nth-child(22) {
+              animation-delay: 2.1s;
+            }
+            .cinematic-title span:nth-child(23) {
+              animation-delay: 2.2s;
+            }
+            .cinematic-title span:nth-child(24) {
+              animation-delay: 2.3s;
+            }
+            .cinematic-title span:nth-child(25) {
+              animation-delay: 2.4s;
+            }
+            .cinematic-title span:nth-child(26) {
+              animation-delay: 2.5s;
+            }
+            .cinematic-title span:nth-child(27) {
+              animation-delay: 2.6s;
+            }
+            .cinematic-title span:nth-child(28) {
+              animation-delay: 2.7s;
+            }
+            .cinematic-title span:nth-child(29) {
+              animation-delay: 2.8s;
+            }
+            .cinematic-title span:nth-child(30) {
+              animation-delay: 2.9s;
+            }
+            .cinematic-title span:nth-child(31) {
+              animation-delay: 3s;
+            }
+            .cinematic-title span:nth-child(32) {
+              animation-delay: 3.1s;
+            }
+            .cinematic-title span:nth-child(33) {
+              animation-delay: 3.2s;
+            }
+            .cinematic-title span:nth-child(34) {
+              animation-delay: 3.3s;
+            }
+            .cinematic-title span:nth-child(35) {
+              animation-delay: 3.4s;
+            }
+            .cinematic-title span:nth-child(36) {
+              animation-delay: 3.5s;
+            }
+            .cinematic-title span:nth-child(37) {
+              animation-delay: 3.6s;
+            }
+            .cinematic-title span:nth-child(38) {
+              animation-delay: 3.7s;
+            }
+            .cinematic-title span:nth-child(39) {
+              animation-delay: 3.8s;
+            }
+            .cinematic-title span:nth-child(40) {
+              animation-delay: 3.9s;
+            }
+            .cinematic-title span:nth-child(41) {
+              animation-delay: 4s;
+            }
+            .cinematic-title span:nth-child(42) {
+              animation-delay: 4.1s;
+            }
+            .cinematic-title span:nth-child(43) {
+              animation-delay: 4.2s;
+            }
+            .cinematic-title span:nth-child(44) {
+              animation-delay: 4.3s;
+            }
+            .cinematic-title span:nth-child(45) {
+              animation-delay: 4.4s;
+            }
+            .cinematic-title span:nth-child(46) {
+              animation-delay: 4.5s;
+            }
+            .cinematic-title span:nth-child(47) {
+              animation-delay: 4.6s;
+            }
+            .cinematic-title span:nth-child(48) {
+              animation-delay: 4.7s;
+            }
+            .cinematic-title span:nth-child(49) {
+              animation-delay: 4.8s;
+            }
+            .cinematic-title span:nth-child(50) {
+              animation-delay: 4.9s;
+            }
+            .cinematic-title span:nth-child(51) {
+              animation-delay: 5s;
+            }
+            .cinematic-title span:nth-child(52) {
+              animation-delay: 5.1s;
+            }
+            .cinematic-title span:nth-child(53) {
+              animation-delay: 5.2s;
+            }
+            .cinematic-title span:nth-child(54) {
+              animation-delay: 5.3s;
+            }
+            .cinematic-title span:nth-child(55) {
+              animation-delay: 5.4s;
+            }
+            .cinematic-title span:nth-child(56) {
+              animation-delay: 5.5s;
+            }
+            .cinematic-title span:nth-child(57) {
+              animation-delay: 5.6s;
+            }
+            .cinematic-title span:nth-child(58) {
+              animation-delay: 5.7s;
+            }
+            .cinematic-title span:nth-child(59) {
+              animation-delay: 5.8s;
+            }
+            .cinematic-title span:nth-child(60) {
+              animation-delay: 5.9s;
+            }
+            .cinematic-title span:nth-child(61) {
+              animation-delay: 6s;
+            }
+            .cinematic-title span:nth-child(62) {
+              animation-delay: 6.1s;
+            }
+            .cinematic-title span:nth-child(63) {
+              animation-delay: 6.2s;
+            }
+            .cinematic-title span:nth-child(64) {
+              animation-delay: 6.3s;
+            }
+            .cinematic-title span:nth-child(65) {
+              animation-delay: 6.4s;
+            }
+            .cinematic-title span:nth-child(66) {
+              animation-delay: 6.5s;
+            }
+            .cinematic-title span:nth-child(67) {
+              animation-delay: 6.6s;
+            }
+            .cinematic-title span:nth-child(68) {
+              animation-delay: 6.7s;
+            }
+            .cinematic-title span:nth-child(69) {
+              animation-delay: 6.8s;
+            }
+            .cinematic-title span:nth-child(70) {
+              animation-delay: 6.9s;
+            }
+            .cinematic-title span:nth-child(71) {
+              animation-delay: 7s;
+            }
+            .cinematic-title span:nth-child(72) {
+              animation-delay: 7.1s;
+            }
+            .cinematic-title span:nth-child(73) {
+              animation-delay: 7.2s;
+            }
+            .cinematic-title span:nth-child(74) {
+              animation-delay: 7.3s;
+            }
+            .cinematic-title span:nth-child(75) {
+              animation-delay: 7.4s;
+            }
+            .cinematic-title span:nth-child(76) {
+              animation-delay: 7.5s;
+            }
+            .cinematic-title span:nth-child(77) {
+              animation-delay: 7.6s;
+            }
+            .cinematic-title span:nth-child(78) {
+              animation-delay: 7.7s;
+            }
+            .cinematic-title span:nth-child(79) {
+              animation-delay: 7.8s;
+            }
+            .cinematic-title span:nth-child(80) {
+              animation-delay: 7.9s;
+            }
+            .cinematic-title span:nth-child(81) {
+              animation-delay: 8s;
+            }
+            .cinematic-title span:nth-child(82) {
+              animation-delay: 8.1s;
+            }
+            .cinematic-title span:nth-child(83) {
+              animation-delay: 8.2s;
+            }
+            .cinematic-title span:nth-child(84) {
+              animation-delay: 8.3s;
+            }
+            .cinematic-title span:nth-child(85) {
+              animation-delay: 8.4s;
+            }
+            .cinematic-title span:nth-child(86) {
+              animation-delay: 8.5s;
+            }
+            .cinematic-title span:nth-child(87) {
+              animation-delay: 8.6s;
+            }
+            .cinematic-title span:nth-child(88) {
+              animation-delay: 8.7s;
+            }
+            .cinematic-title span:nth-child(89) {
+              animation-delay: 8.8s;
+            }
+            .cinematic-title span:nth-child(90) {
+              animation-delay: 8.9s;
+            }
+            .cinematic-title span:nth-child(91) {
+              animation-delay: 9s;
+            }
+            .cinematic-title span:nth-child(92) {
+              animation-delay: 9.1s;
+            }
+            .cinematic-title span:nth-child(93) {
+              animation-delay: 9.2s;
+            }
+            .cinematic-title span:nth-child(94) {
+              animation-delay: 9.3s;
+            }
+            .cinematic-title span:nth-child(95) {
+              animation-delay: 9.4s;
+            }
+            .cinematic-title span:nth-child(96) {
+              animation-delay: 9.5s;
+            }
+            .cinematic-title span:nth-child(97) {
+              animation-delay: 9.6s;
+            }
+            .cinematic-title span:nth-child(98) {
+              animation-delay: 9.7s;
+            }
+            .cinematic-title span:nth-child(99) {
+              animation-delay: 9.8s;
+            }
+            .cinematic-title span:nth-child(100) {
+              animation-delay: 9.9s;
+            }
+          </style>
+          <p>
+            Leading the growth and development of Korean online games,<br />
+            Lineage introduced new authentic systems and content,
+          </p>
+          <p class="mt-2">
+            including guilds led by a monarch,<br />
+            a large scale battle called Castle Siege and the Weapon
+            Reinforcement System,
+          </p>
+          <p class="mt-2">
+            which became the standard for numerous later MMORPGs...
+          </p>
+        </section>
+
+        <footer class="text-center py-6 text-sm text-gray-400">
+          <div class="cinematic-title text-sm mt-10 mb-5">
+            <span style="animation-delay: 0s">©</span
+            ><span style="animation-delay: 0.1s">&nbsp;</span
+            ><span style="animation-delay: 0.2s">2</span
+            ><span style="animation-delay: 0.3s">0</span
+            ><span style="animation-delay: 0.4s">2</span
+            ><span style="animation-delay: 0.5s">5</span
+            ><span style="animation-delay: 0.6s">&nbsp;</span
+            ><span style="animation-delay: 0.7s">L</span
+            ><span style="animation-delay: 0.8s">i</span
+            ><span style="animation-delay: 0.9s">n</span
+            ><span style="animation-delay: 1s">e</span
+            ><span style="animation-delay: 1.1s">a</span
+            ><span style="animation-delay: 1.2s">g</span
+            ><span style="animation-delay: 1.3s">e</span
+            ><span style="animation-delay: 1.4s">&nbsp;</span
+            ><span style="animation-delay: 1.5s">1</span
+            ><span style="animation-delay: 1.6s">&nbsp;</span
+            ><span style="animation-delay: 1.7s">S</span
+            ><span style="animation-delay: 1.8s">e</span
+            ><span style="animation-delay: 1.9s">r</span
+            ><span style="animation-delay: 2s">v</span
+            ><span style="animation-delay: 2.1s">e</span
+            ><span style="animation-delay: 2.2s">r</span
+            ><span style="animation-delay: 2.3s">.</span
+            ><span style="animation-delay: 2.4s">&nbsp;</span
+            ><span style="animation-delay: 2.5s">A</span
+            ><span style="animation-delay: 2.6s">l</span
+            ><span style="animation-delay: 2.7s">l</span
+            ><span style="animation-delay: 2.8s">&nbsp;</span
+            ><span style="animation-delay: 2.9s">r</span
+            ><span style="animation-delay: 3s">i</span
+            ><span style="animation-delay: 3.1s">g</span
+            ><span style="animation-delay: 3.2s">h</span
+            ><span style="animation-delay: 3.3s">t</span
+            ><span style="animation-delay: 3.4s">s</span
+            ><span style="animation-delay: 3.5s">&nbsp;</span
+            ><span style="animation-delay: 3.6s">r</span
+            ><span style="animation-delay: 3.7s">e</span
+            ><span style="animation-delay: 3.8s">s</span
+            ><span style="animation-delay: 3.9s">e</span
+            ><span style="animation-delay: 4s">r</span
+            ><span style="animation-delay: 4.1s">v</span
+            ><span style="animation-delay: 4.2s">e</span
+            ><span style="animation-delay: 4.3s">d</span
+            ><span style="animation-delay: 4.4s">.</span>
+          </div>
+        </footer>
+      </div>
+      <!-- Server Rules Sidebar -->
+      <section
+        id="rules"
+        class="fixed top-28 left-4 w-48 p-3 rounded-xl shadow-lg z-50 fade-in bg-white/10 backdrop-transparent border border-white/30 wave-effect"
+      >
+        <h2 class="text-lg font-bold text-center text-red-400 mb-3">
+          Server Rules
+        </h2>
+        <ul class="list-disc list-inside space-y-1 text-sm text-white">
+          <li class="hover:text-red-300">No cheating</li>
+          <li class="hover:text-red-300">No botting</li>
+          <li class="hover:text-red-300">Respect GM</li>
+          <li class="hover:text-red-300">No harassment</li>
+          <li class="hover:text-red-300">Report bugs</li>
+        </ul>
+      </section>
+    </div>
+    <section
+      id="ranking"
+      class="fixed top-28 right-4 w-48 p-3 rounded-xl shadow-lg z-50 fade-in bg-white/10 backdrop-transparent border border-white/30 wave-effect hidden"
+    >
+      <h2 class="text-lg font-bold text-center text-yellow-300 mb-3">
+        🏆 Top Rankings
+      </h2>
+      <ol
+        class="list-decimal list-inside space-y-1 text-sm text-white"
+        id="topRankings"
+      >
+        <!-- Rankings will load here -->
+      </ol>
+    </section>
+
+    <!-- Toggle Forms -->
+    <script>
+      function toggleForm(id) {
+        const sections = [
+          "loginForm",
+          "registerForm",
+          "droplist",
+          "download",
+          "discord",
+          "ranking",
+        ];
+        sections.forEach((sec) => {
+          const el = document.getElementById(sec);
+          if (el) el.classList.add("hidden");
+        });
+        const form = document.getElementById(id);
+        if (form) {
+          form.classList.toggle("hidden");
+          form.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      function searchDropList() {
+        const results = document.getElementById("droplistResults");
+        results.innerHTML = "<p class='text-gray-300'>Loading drop list...</p>";
+
+        const searchInput = document.getElementById("searchInput");
+        const search = searchInput ? searchInput.value : "";
+        fetch(`droplist.php?search=${encodeURIComponent(search)}`)
+          .then((response) => response.text())
+          .then((data) => {
+            results.innerHTML = data;
+          });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // ✅ Load droplist on page load if visible
+        if (document.getElementById("droplistResults")) {
+          searchDropList();
+        }
+
+        // ✅ Load top rankings on page load
+        fetch("toprank.php")
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById("topRankings").innerHTML = data;
+          });
+      });
+    </script>
+  </body>
+</html>
